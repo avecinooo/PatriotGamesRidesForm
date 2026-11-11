@@ -3,7 +3,7 @@
    THE BURN CROSSWORD
    ========================================= */
 
-// ADD YOUR GOOGLE FORM URL HERE WHEN READY
+// GOOGLE FORM URL
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVY6XUe_xC26bRR60KzzeXuWIw_brz-ebblZp1Gi04Ba8DIw/viewform?usp=header";
 
 const GRID_SIZE = 19;
@@ -11,10 +11,6 @@ const GRID_SIZE = 19;
 
 /* =========================================
    PUZZLE ANSWERS AND CLUES
-
-   row and col start at zero.
-   A = Across
-   D = Down
    ========================================= */
 
 const entries = [
@@ -1069,21 +1065,12 @@ function clearPuzzle() {
 
 
 /* =========================================
-   BUTTONS
+   GOOGLE RIDE FORM
    ========================================= */
-
-document.getElementById("check-button")
-    .addEventListener("click", checkPuzzle);
-
-document.getElementById("clear-button")
-    .addEventListener("click", clearPuzzle);
-
-
 
 function openRideForm() {
 
     if (
-        GOOGLE_FORM_URL === "YOUR_GOOGLE_FORM_URL" ||
         !GOOGLE_FORM_URL.startsWith("https://")
     ) {
 
@@ -1098,16 +1085,31 @@ function openRideForm() {
 }
 
 
-// COMPLETION SCREEN BUTTON
-document.getElementById("google-form-button")
-    .addEventListener("click", openRideForm);
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+// CHECK PUZZLE
+document.getElementById("check-button")
+    .addEventListener("click", checkPuzzle);
 
 
-// SKIP CROSSWORD BUTTON
+// CLEAR LETTERS
+document.getElementById("clear-button")
+    .addEventListener("click", clearPuzzle);
+
+
+// SKIP DIRECTLY TO RIDE FORM
 document.getElementById("skip-button")
     .addEventListener("click", openRideForm);
 
 
+// RIDE FORM AFTER COMPLETING CROSSWORD
+document.getElementById("google-form-button")
+    .addEventListener("click", openRideForm);
+
+
+// PLAY AGAIN
 document.getElementById("play-again-button")
     .addEventListener("click", () => {
 
