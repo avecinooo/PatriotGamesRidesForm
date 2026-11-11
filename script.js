@@ -3,21 +3,23 @@
    THE BURN CROSSWORD
    ========================================= */
 
-// CHANGE THIS WHEN YOUR GOOGLE FORM IS READY
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVY6XUe_xC26bRR60KzzeXuWIw_brz-ebblZp1Gi04Ba8DIw/viewform?usp=header";
+// ADD YOUR GOOGLE FORM URL HERE WHEN READY
+const GOOGLE_FORM_URL = "YOUR_GOOGLE_FORM_URL";
 
 const GRID_SIZE = 19;
+
 
 /* =========================================
    PUZZLE ANSWERS AND CLUES
 
    row and col start at zero.
-   direction: A = Across, D = Down.
+   A = Across
+   D = Down
    ========================================= */
 
 const entries = [
 
-    // ACROSS
+    // ================= ACROSS =================
 
     {
         number: 2,
@@ -25,7 +27,7 @@ const entries = [
         row: 2,
         col: 1,
         answer: "MUFFIN",
-        clue: '"Eww this is a salty ___" - Muff'
+        clue: '"Eww this is a salty ___!" - Muff probably'
     },
 
     {
@@ -34,7 +36,7 @@ const entries = [
         row: 2,
         col: 12,
         answer: "CHEWY",
-        clue: "A nickname for Carter (holly used to use it)"
+        clue: "One of Carters nicknames"
     },
 
     {
@@ -88,34 +90,34 @@ const entries = [
         row: 9,
         col: 13,
         answer: "CHEEKS",
-        clue: "What you see every tournament"
+        clue: "Something white that you can't escape at every tournament"
     },
 
     {
-        number: 16,
+        number: 15,
         direction: "A",
         row: 11,
-        col: 6,
-        answer: "WILLIAM",
-        clue: "We had one of these names last year now there are two (they don't go by it though)"
+        col: 10,
+        answer: "TATE",
+        clue: "Probably the freakiest member on the team (recently got a haircut)"
     },
 
     {
         number: 17,
         direction: "A",
-        row: 12,
-        col: 14,
-        answer: "LIGHT",
-        clue: "Odds are in ___"
+        row: 13,
+        col: 6,
+        answer: "SLAMMER",
+        clue: "Sidewalk ___ (Pain)"
     },
 
     {
         number: 18,
         direction: "A",
         row: 13,
-        col: 6,
-        answer: "SLAMMER",
-        clue: "Sidewalk ___"
+        col: 14,
+        answer: "LIGHT",
+        clue: "Odds are in ___"
     },
 
     {
@@ -124,11 +126,20 @@ const entries = [
         row: 15,
         col: 5,
         answer: "AFRICA",
-        clue: "Ben is from the south of this place."
+        clue: "Ben is from the south of this place"
     },
 
     {
         number: 21,
+        direction: "A",
+        row: 15,
+        col: 14,
+        answer: "FLOP",
+        clue: "Michael's new nickname"
+    },
+
+    {
+        number: 23,
         direction: "A",
         row: 17,
         col: 2,
@@ -137,7 +148,7 @@ const entries = [
     },
 
 
-    // DOWN
+    // ================= DOWN =================
 
     {
         number: 1,
@@ -145,7 +156,7 @@ const entries = [
         row: 0,
         col: 3,
         answer: "BUFFET",
-        clue: "The go-to spot after a tournament"
+        clue: "Go-to spot after a tournament"
     },
 
     {
@@ -172,7 +183,7 @@ const entries = [
         row: 7,
         col: 11,
         answer: "CASCADES",
-        clue: "Scav hunt waterfall"
+        clue: "Hike with a waterfall at the end"
     },
 
     {
@@ -188,22 +199,13 @@ const entries = [
         number: 13,
         direction: "D",
         row: 9,
-        col: 14,
-        answer: "CHILI",
-        clue: "D2 ___ Challenge"
-    },
-
-    {
-        number: 14,
-        direction: "D",
-        row: 9,
         col: 18,
         answer: "SHITTY",
         clue: "Don't use more than 4 of these"
     },
 
     {
-        number: 15,
+        number: 14,
         direction: "D",
         row: 10,
         col: 2,
@@ -212,12 +214,21 @@ const entries = [
     },
 
     {
-        number: 18,
+        number: 16,
+        direction: "D",
+        row: 12,
+        col: 15,
+        answer: "WILL",
+        clue: "We used to have only one but this year two people have this first name (neither go by it though)"
+    },
+
+    {
+        number: 17,
         direction: "D",
         row: 13,
         col: 6,
         answer: "SAFETY",
-        clue: "What to say after you rip and before Trevor punches you"
+        clue: "What to say after your fart and before Trevor punches you"
     },
 
     {
@@ -227,6 +238,15 @@ const entries = [
         col: 9,
         answer: "CT",
         clue: "Weird stuff is happening in this frisbee house's basement"
+    },
+
+    {
+        number: 22,
+        direction: "D",
+        row: 15,
+        col: 17,
+        answer: "POOP",
+        clue: "6 of these were done on the drillfield this year"
     }
 
 ];
@@ -272,8 +292,6 @@ function buildGrid() {
 
     }
 
-    // Place every answer into the grid.
-
     entries.forEach(entry => {
 
         for (let i = 0; i < entry.answer.length; i++) {
@@ -299,12 +317,15 @@ function buildGrid() {
                 cell.correctLetter &&
                 cell.correctLetter !== letter
             ) {
+
                 console.error(
-                    "Crossword conflict at:",
-                    r, c,
+                    "CROSSWORD CONFLICT:",
+                    r,
+                    c,
                     cell.correctLetter,
                     letter
                 );
+
             }
 
             cell.correctLetter = letter;
@@ -372,9 +393,14 @@ function renderGrid() {
                 input.autocomplete = "off";
                 input.autocapitalize = "characters";
                 input.spellcheck = false;
+
                 input.dataset.row = r;
                 input.dataset.col = c;
-                input.setAttribute("aria-label", `Row ${r + 1}, column ${c + 1}`);
+
+                input.setAttribute(
+                    "aria-label",
+                    `Row ${r + 1}, column ${c + 1}`
+                );
 
                 input.value = cellData.letter;
 
@@ -447,18 +473,23 @@ function renderClues() {
         const clue = document.createElement("div");
 
         clue.className = "clue";
+
         clue.dataset.number = entry.number;
         clue.dataset.direction = entry.direction;
 
-        clue.innerHTML = `
-            <span class="clue-number">${entry.number}</span>
-            <span class="clue-text">${escapeHTML(entry.clue)}</span>
-        `;
+        const number = document.createElement("span");
+        number.className = "clue-number";
+        number.textContent = entry.number;
+
+        const text = document.createElement("span");
+        text.className = "clue-text";
+        text.textContent = entry.clue;
+
+        clue.appendChild(number);
+        clue.appendChild(text);
 
         clue.addEventListener("click", () => {
-
             selectEntry(entry);
-
         });
 
         if (entry.direction === "A") {
@@ -472,16 +503,6 @@ function renderClues() {
 }
 
 
-function escapeHTML(value) {
-
-    const element = document.createElement("span");
-    element.textContent = value;
-
-    return element.innerHTML;
-
-}
-
-
 /* =========================================
    SELECT A WORD
    ========================================= */
@@ -490,27 +511,16 @@ function selectEntry(entry) {
 
     activeEntry = entry;
 
-    const firstR = entry.row;
-    const firstC = entry.col;
-
     selectedCell = {
-        row: firstR,
-        col: firstC
+        row: entry.row,
+        col: entry.col
     };
 
+    previousCellClick = null;
+
     highlightActiveEntry();
-
-    focusCell(firstR, firstC);
-
-    document.querySelectorAll(".clue").forEach(clue => {
-
-        clue.classList.toggle(
-            "active",
-            Number(clue.dataset.number) === entry.number &&
-            clue.dataset.direction === entry.direction
-        );
-
-    });
+    updateActiveClue();
+    focusCell(entry.row, entry.col);
 
 }
 
@@ -519,11 +529,7 @@ function selectCell(r, c) {
 
     const cell = grid[r][c];
 
-    if (cell.isBlack) return;
-
-    const availableEntries = cell.entries;
-
-    if (!availableEntries.length) return;
+    if (cell.isBlack || !cell.entries.length) return;
 
     const sameCell =
         previousCellClick &&
@@ -534,24 +540,24 @@ function selectCell(r, c) {
 
     if (
         sameCell &&
-        availableEntries.length > 1 &&
+        cell.entries.length > 1 &&
         activeEntry
     ) {
 
-        chosenEntry = availableEntries.find(entry =>
+        chosenEntry = cell.entries.find(entry =>
             entry.direction !== activeEntry.direction
-        ) || availableEntries[0];
+        ) || cell.entries[0];
 
     } else if (
         activeEntry &&
-        availableEntries.includes(activeEntry)
+        cell.entries.includes(activeEntry)
     ) {
 
         chosenEntry = activeEntry;
 
     } else {
 
-        chosenEntry = availableEntries[0];
+        chosenEntry = cell.entries[0];
 
     }
 
@@ -562,18 +568,24 @@ function selectCell(r, c) {
     selectedCell = { row: r, col: c };
 
     highlightActiveEntry();
+    updateActiveClue();
+    focusCell(r, c);
+
+}
+
+
+function updateActiveClue() {
 
     document.querySelectorAll(".clue").forEach(clue => {
 
         clue.classList.toggle(
             "active",
-            Number(clue.dataset.number) === chosenEntry.number &&
-            clue.dataset.direction === chosenEntry.direction
+            activeEntry &&
+            Number(clue.dataset.number) === activeEntry.number &&
+            clue.dataset.direction === activeEntry.direction
         );
 
     });
-
-    focusCell(r, c);
 
 }
 
@@ -591,23 +603,19 @@ function highlightActiveEntry() {
 
     if (!activeEntry) return;
 
-    for (let i = 0; i < activeEntry.answer.length; i++) {
+    const cells = getEntryCells(activeEntry);
 
-        const r = activeEntry.row +
-            (activeEntry.direction === "D" ? i : 0);
-
-        const c = activeEntry.col +
-            (activeEntry.direction === "A" ? i : 0);
+    cells.forEach(position => {
 
         const cell = document.querySelector(
-            `.cell[data-row="${r}"][data-col="${c}"]`
+            `.cell[data-row="${position.row}"][data-col="${position.col}"]`
         );
 
         if (cell) {
             cell.classList.add("active-word");
         }
 
-    }
+    });
 
     if (selectedCell) {
 
@@ -648,11 +656,13 @@ function getEntryCells(entry) {
     for (let i = 0; i < entry.answer.length; i++) {
 
         cells.push({
+
             row: entry.row +
                 (entry.direction === "D" ? i : 0),
 
             col: entry.col +
                 (entry.direction === "A" ? i : 0)
+
         });
 
     }
@@ -682,7 +692,6 @@ function moveToNextCell() {
         selectedCell = next;
 
         highlightActiveEntry();
-
         focusCell(next.row, next.col);
 
     }
@@ -708,7 +717,6 @@ function moveToPreviousCell() {
         selectedCell = previous;
 
         highlightActiveEntry();
-
         focusCell(previous.row, previous.col);
 
     }
@@ -729,7 +737,6 @@ function handleKeydown(event, r, c) {
         if (grid[r][c].letter) {
 
             grid[r][c].letter = "";
-
             event.target.value = "";
 
         } else {
@@ -967,8 +974,10 @@ function clearCellFeedback() {
 
     });
 
-    document.getElementById("feedback").textContent = "";
-    document.getElementById("feedback").className = "feedback";
+    const feedback = document.getElementById("feedback");
+
+    feedback.textContent = "";
+    feedback.className = "feedback";
 
 }
 
@@ -979,7 +988,9 @@ function clearCellFeedback() {
 
 function updateProgress() {
 
-    const total = grid.flat().filter(cell => !cell.isBlack).length;
+    const total = grid.flat().filter(cell =>
+        !cell.isBlack
+    ).length;
 
     const filled = grid.flat().filter(cell =>
         !cell.isBlack && cell.letter
@@ -989,7 +1000,8 @@ function updateProgress() {
 
     if (filled === total) {
 
-        feedback.textContent = "All squares filled! Check your answers.";
+        feedback.textContent =
+            "All squares filled! Check your answers.";
 
     }
 
@@ -1011,7 +1023,8 @@ function completePuzzle() {
     document.getElementById("final-time").textContent =
         getFormattedTime();
 
-    document.getElementById("game-screen").classList.add("hidden");
+    document.getElementById("game-screen")
+        .classList.add("hidden");
 
     document.getElementById("completion-screen")
         .classList.remove("hidden");
@@ -1050,7 +1063,6 @@ function clearPuzzle() {
     });
 
     clearCellFeedback();
-
     updateProgress();
 
 }
@@ -1099,4 +1111,3 @@ document.getElementById("play-again-button")
    ========================================= */
 
 buildGrid();
-
