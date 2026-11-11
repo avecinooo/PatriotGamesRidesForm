@@ -1079,23 +1079,33 @@ document.getElementById("clear-button")
     .addEventListener("click", clearPuzzle);
 
 
+
+function openRideForm() {
+
+    if (
+        GOOGLE_FORM_URL === "YOUR_GOOGLE_FORM_URL" ||
+        !GOOGLE_FORM_URL.startsWith("https://")
+    ) {
+
+        alert("The Google Form link has not been added yet.");
+
+        return;
+
+    }
+
+    window.open(GOOGLE_FORM_URL, "_blank");
+
+}
+
+
+// COMPLETION SCREEN BUTTON
 document.getElementById("google-form-button")
-    .addEventListener("click", () => {
+    .addEventListener("click", openRideForm);
 
-        if (
-            GOOGLE_FORM_URL === "YOUR_GOOGLE_FORM_URL" ||
-            !GOOGLE_FORM_URL.startsWith("https://")
-        ) {
 
-            alert("The Google Form link has not been added yet.");
-
-            return;
-
-        }
-
-        window.open(GOOGLE_FORM_URL, "_blank");
-
-    });
+// SKIP CROSSWORD BUTTON
+document.getElementById("skip-button")
+    .addEventListener("click", openRideForm);
 
 
 document.getElementById("play-again-button")
