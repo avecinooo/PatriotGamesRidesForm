@@ -194,6 +194,7 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 8px;
+    flex-wrap: wrap;
 }
 
 button {
@@ -231,6 +232,7 @@ button {
     background: #eee;
 }
 
+/* SKIP TO RIDE FORM BUTTON */
 
 .skip-button {
     border: 1px solid #668b35;
@@ -245,7 +247,6 @@ button {
     background: #edf5e3;
     transform: translateY(-1px);
 }
-
 
 /* FEEDBACK */
 
@@ -434,6 +435,7 @@ button {
 /* MOBILE */
 
 @media (max-width: 850px) {
+
     .game-container {
         grid-template-columns: 1fr;
         width: 96%;
@@ -455,9 +457,11 @@ button {
     .clue-list {
         height: 420px;
     }
+
 }
 
 @media (max-width: 420px) {
+
     .clue-columns {
         grid-template-columns: 1fr 1fr;
     }
@@ -480,12 +484,12 @@ button {
         flex-direction: column;
     }
 
-    .puzzle-actions .skip-button {
-    width: 100%;
-    }
-
     .puzzle-actions button {
         width: 100%;
     }
-}
 
+    .puzzle-actions .skip-button {
+        width: 100%;
+    }
+
+}
