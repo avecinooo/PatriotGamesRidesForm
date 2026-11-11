@@ -34,7 +34,7 @@ const entries = [
         row: 2,
         col: 12,
         answer: "CHEWY",
-        clue: "A nickname for Carter"
+        clue: "A nickname for Carter (holly used to use it)"
     },
 
     {
@@ -43,7 +43,7 @@ const entries = [
         row: 5,
         col: 2,
         answer: "STABOL",
-        clue: "This house recently got a pool"
+        clue: "This frisbee house recently got a pool"
     },
 
     {
@@ -52,7 +52,7 @@ const entries = [
         row: 5,
         col: 13,
         answer: "POD",
-        clue: "Go to handler ___"
+        clue: "Go to handler ___!"
     },
 
     {
@@ -79,7 +79,7 @@ const entries = [
         row: 9,
         col: 5,
         answer: "CENTROS",
-        clue: "Michael's favorite place"
+        clue: "Michael's favorite place on earth"
     },
 
     {
@@ -97,16 +97,16 @@ const entries = [
         row: 11,
         col: 6,
         answer: "WILLIAM",
-        clue: "We had one but now there's two (none of them go by this name)"
+        clue: "We had one of these names last year now there are two (they don't go by it though)"
     },
 
     {
         number: 17,
         direction: "A",
         row: 12,
-        col: 13,
+        col: 14,
         answer: "LIGHT",
-        clue: "Odds in ___"
+        clue: "Odds are in ___"
     },
 
     {
@@ -115,7 +115,7 @@ const entries = [
         row: 13,
         col: 6,
         answer: "SLAMMER",
-        clue: "Sidewalk ___ (Pain)"
+        clue: "Sidewalk ___"
     },
 
     {
@@ -124,7 +124,7 @@ const entries = [
         row: 15,
         col: 5,
         answer: "AFRICA",
-        clue: "Ben is from this continent"
+        clue: "Ben is from the south of this place."
     },
 
     {
@@ -145,7 +145,7 @@ const entries = [
         row: 0,
         col: 3,
         answer: "BUFFET",
-        clue: "Go-to spot after a tournament"
+        clue: "The go-to spot after a tournament"
     },
 
     {
@@ -163,7 +163,7 @@ const entries = [
         row: 4,
         col: 6,
         answer: "POOKIE",
-        clue: "Scav hunt all-time top scorer"
+        clue: "Scav hunt top scorer"
     },
 
     {
@@ -172,7 +172,7 @@ const entries = [
         row: 7,
         col: 11,
         answer: "CASCADES",
-        clue: "Waterfall with a long ahh hike"
+        clue: "Scav hunt waterfall"
     },
 
     {
@@ -181,13 +181,13 @@ const entries = [
         row: 7,
         col: 16,
         answer: "EYE",
-        clue: "What Link always has injured"
+        clue: "Part of Link's face that is always red"
     },
 
     {
         number: 13,
         direction: "D",
-        row: 8,
+        row: 9,
         col: 14,
         answer: "CHILI",
         clue: "D2 ___ Challenge"
@@ -199,13 +199,13 @@ const entries = [
         row: 9,
         col: 18,
         answer: "SHITTY",
-        clue: "Missing practice because of something stupid"
+        clue: "Don't use more than 4 of these"
     },
 
     {
         number: 15,
         direction: "D",
-        row: 9,
+        row: 10,
         col: 2,
         answer: "DOLPHINS",
         clue: "NFL Team on Pookie's jacket (best NFL team oat)"
@@ -217,7 +217,7 @@ const entries = [
         row: 13,
         col: 6,
         answer: "SAFETY",
-        clue: "What to say after your fart and before Trevor punches you"
+        clue: "What to say after you rip and before Trevor punches you"
     },
 
     {
@@ -226,7 +226,7 @@ const entries = [
         row: 15,
         col: 9,
         answer: "CT",
-        clue: "Weird stuff is happening in this house's basement"
+        clue: "Weird stuff is happening in this frisbee house's basement"
     }
 
 ];
