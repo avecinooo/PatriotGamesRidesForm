@@ -4,7 +4,7 @@
    ========================================= */
 
 // CHANGE THIS WHEN YOUR GOOGLE FORM IS READY
-const GOOGLE_FORM_URL = "YOUR_GOOGLE_FORM_URL";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVY6XUe_xC26bRR60KzzeXuWIw_brz-ebblZp1Gi04Ba8DIw/viewform?usp=header";
 
 const GRID_SIZE = 19;
 
