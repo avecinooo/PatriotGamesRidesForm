@@ -4,7 +4,7 @@
    ========================================= */
 
 // ADD YOUR GOOGLE FORM URL HERE WHEN READY
-const GOOGLE_FORM_URL = "YOUR_GOOGLE_FORM_URL";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVY6XUe_xC26bRR60KzzeXuWIw_brz-ebblZp1Gi04Ba8DIw/viewform?usp=header";
 
 const GRID_SIZE = 19;
 
@@ -90,7 +90,7 @@ const entries = [
         row: 9,
         col: 13,
         answer: "CHEEKS",
-        clue: "Something white that you can't escape at every tournament"
+        clue: "Something white (and hairy) that you will always see at a tourney"
     },
 
     {
@@ -201,7 +201,7 @@ const entries = [
         row: 9,
         col: 18,
         answer: "SHITTY",
-        clue: "Don't use more than 4 of these"
+        clue: "Don't use more than 4"
     },
 
     {
@@ -246,7 +246,7 @@ const entries = [
         row: 15,
         col: 17,
         answer: "POOP",
-        clue: "6 of these were done on the drillfield this year"
+        clue: "6 of these were done on the drillfield this year (singular)"
     }
 
 ];
