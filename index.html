@@ -1,1 +1,121 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Burn Crossword</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-label">VIRGINIA TECH ULTIMATE</div>
+        <h1>THE BURN CROSSWORD</h1>
+        <p>HOW WELL DO YOU KNOW BURN?</p>
+    </header>
+
+    <main class="game-container" id="game-screen">
+
+        <section class="puzzle-section">
+
+            <div class="puzzle-toolbar">
+                <div>
+                    <span class="toolbar-label">PUZZLE</span>
+                    <strong>01 / THE TEAM</strong>
+                </div>
+
+                <div class="timer-container">
+                    <span class="toolbar-label">TIME</span>
+                    <strong id="timer">00:00</strong>
+                </div>
+            </div>
+
+            <div class="grid-wrapper">
+                <div id="crossword-grid" class="crossword-grid"></div>
+            </div>
+
+            <div class="grid-instructions">
+                Click a square to select a word. Type to fill in the puzzle.
+                Use the arrow keys to navigate.
+            </div>
+
+            <div class="puzzle-actions">
+                <button id="check-button" class="primary-button">
+                    CHECK PUZZLE
+                </button>
+
+                <button id="clear-button" class="secondary-button">
+                    CLEAR LETTERS
+                </button>
+            </div>
+
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+
+        </section>
+
+        <aside class="clues-section">
+
+            <div class="clues-header">
+                <h2>CLUES</h2>
+                <p>Find every answer to complete the puzzle.</p>
+            </div>
+
+            <div class="clue-columns">
+
+                <div class="clue-panel">
+                    <h3>ACROSS</h3>
+                    <div id="across-clues" class="clue-list"></div>
+                </div>
+
+                <div class="clue-panel">
+                    <h3>DOWN</h3>
+                    <div id="down-clues" class="clue-list"></div>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- COMPLETION SCREEN -->
+    <section id="completion-screen" class="completion-screen hidden">
+
+        <div class="completion-card">
+
+            <div class="completion-label">PUZZLE COMPLETED</div>
+
+            <h1>YOU CRACKED IT.</h1>
+
+            <p>
+                You successfully completed the Burn Crossword.
+            </p>
+
+            <div class="final-time">
+                <span>YOUR TIME</span>
+                <strong id="final-time">00:00</strong>
+            </div>
+
+            <p class="completion-message">
+                Nice work. You're one step closer to the finish line.
+            </p>
+
+            <button id="google-form-button" class="primary-button">
+                CONTINUE TO RIDE FORM →
+            </button>
+
+            <button id="play-again-button" class="secondary-button">
+                PLAY AGAIN
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
