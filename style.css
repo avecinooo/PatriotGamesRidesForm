@@ -231,6 +231,22 @@ button {
     background: #eee;
 }
 
+
+.skip-button {
+    border: 1px solid #668b35;
+    background: white;
+    color: #668b35;
+    padding: 14px 18px;
+    font-size: 11px;
+    border-radius: 4px;
+}
+
+.skip-button:hover {
+    background: #edf5e3;
+    transform: translateY(-1px);
+}
+
+
 /* FEEDBACK */
 
 .feedback {
@@ -462,6 +478,10 @@ button {
 
     .puzzle-actions {
         flex-direction: column;
+    }
+
+    .puzzle-actions .skip-button {
+    width: 100%;
     }
 
     .puzzle-actions button {
